@@ -3,4 +3,8 @@
   padding: 0;
   box-sizing: border-box;
   font-family: TheJamsil;
+
+  // 링크 기본 스타일 제거
+  text-decoration: none;
+  color: inherit;
 }

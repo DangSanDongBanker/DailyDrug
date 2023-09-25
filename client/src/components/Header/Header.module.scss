@@ -1,4 +1,80 @@
 @import "../../styles/main.scss";
-.Layout {
-  background-color: red;
+.layout {
+  position: static;
+  margin-bottom: 16px;
+}
+.header {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  margin: 0px 14px;
+}
+.bottomLine {
+  position: relative;
+  width: 100%;
+  height: 4px;
+  background-color: rgba($color: $DDLightGray, $alpha: 0.4);
+}
+
+.logo {
+  font-family: OKDDUNG;
+  letter-spacing: 1px;
+  font-size: 30px;
+  margin-right: 70px;
+  color: $DDYellow;
+  .point {
+    color: $DDGreen;
+    font-family: inherit;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.nav {
+  position: relative;
+  top: 14px;
+  display: flex;
+  margin-right: auto;
+  font-family: TheJamsil;
+  height: 40px;
+  font-size: 24px;
+  font-weight: 300;
+  .category {
+    padding: 0px 20px;
+    // TODO : 마우스 오버시 카테고리가 띄워짐
+    // & > img {
+    //   height: 20px;
+    // }
+
+    &:hover {
+      cursor: pointer;
+      border-bottom: 4px solid $DDYellow;
+      z-index: 1;
+    }
+  }
+}
+.userInfo {
+  .auth {
+    height: 34px;
+    width: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 3px solid $DDGreen;
+    border-radius: 10px;
+
+    font-family: TheJamsil;
+    font-size: 16px;
+    color: $DDGreen;
+    font-weight: 400;
+    font-family: TheJamsil;
+
+    &:hover {
+      background-color: $DDGreen;
+      color: $DDWhite;
+      cursor: pointer;
+    }
+  }
 }

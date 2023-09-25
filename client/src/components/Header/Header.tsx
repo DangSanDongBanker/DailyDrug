@@ -1,14 +1,30 @@
-import "./Header.module.scss";
+import styles from "./Header.module.scss";
+import { Link } from "react-router-dom";
+// import expandIcon from "assets/icons/expand_more.svg";
 
 const Header = () => {
   return (
-    <div className="Layout">
-      <div>DailyDrug</div>
-      <nav>
-        <div>카테고리</div>
-        <div>비교하기</div>
-      </nav>
-      <div>로그인</div>
+    <div className={styles.layout}>
+      <div className={styles.header}>
+        <Link to={"/"} className={styles.logo}>
+          <span className={styles.point}>D</span>aily
+          <span className={styles.point}>D</span>rug
+        </Link>
+        <div className={styles.nav}>
+          <Link to={`/products`} className={styles.category}>
+            카테고리
+            {/* TODO : 마우스 오버시 카테고리가 띄워짐
+						<img src={expandIcon} alt="expand_more" /> */}
+          </Link>
+          <Link to={`/compare`} className={styles.category}>
+            비교하기
+          </Link>
+        </div>
+        <div className={styles.userInfo}>
+          <div className={styles.auth}>로그인</div>
+        </div>
+      </div>
+      <div className={styles.bottomLine}></div>
     </div>
   );
 };
