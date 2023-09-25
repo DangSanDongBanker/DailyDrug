@@ -1,7 +1,7 @@
 import React from "react";
 
 const MainPage = () => {
-  return <>Hello Daily Drug!</>;
+  return <div>Hello Daily Drug!</div>;
 };
 
 export default MainPage;
