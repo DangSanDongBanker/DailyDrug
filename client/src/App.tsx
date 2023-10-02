@@ -5,6 +5,7 @@ import Header from "components/Header/Header";
 import Footer from "components/Footer/Footer";
 import routes from "./routes";
 import styles from "./App.module.scss";
+import Spinner from "components/Spinner/Spinner";
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
         <RecoilRoot>
           <Header />
           <div className={styles.main}>
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Spinner />}>
               <RouterProvider router={routes} />
             </Suspense>
           </div>
