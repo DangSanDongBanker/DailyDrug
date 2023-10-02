@@ -6,19 +6,19 @@ const Header = () => {
   return (
     <div className={styles.layout}>
       <div className={styles.header}>
-        <Link to={"/"} className={styles.logo}>
+        <a href={"/"} className={styles.logo}>
           <span className={styles.point}>D</span>aily
           <span className={styles.point}>D</span>rug
-        </Link>
+        </a>
         <div className={styles.nav}>
-          <Link to={`/products`} className={styles.category}>
+          <a href={"/products"} className={styles.category}>
             카테고리
             {/* TODO : 마우스 오버시 카테고리가 띄워짐
 						<img src={expandIcon} alt="expand_more" /> */}
-          </Link>
-          <Link to={`/compare`} className={styles.category}>
+          </a>
+          <a href={"/compare"} className={styles.category}>
             비교하기
-          </Link>
+          </a>
         </div>
         <div className={styles.userInfo}>
           <div className={styles.auth}>로그인</div>
