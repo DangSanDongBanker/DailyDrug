@@ -1,0 +1,52 @@
+@import "../../styles/main.scss";
+
+.layout {
+  // background-color: blueviolet;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.errorCodeLayout {
+  // background-color: gold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "OKDDUNG";
+  font-size: 4rem;
+  margin-right: 4rem;
+
+  color: $DDBlack;
+  .Code {
+    font-size: 6rem;
+  }
+}
+
+.infoLayout {
+  // background-color: green;
+  font-family: "TheJamsil";
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.errorMessage {
+  height: 6rem;
+  font-weight: 100;
+  font-size: 1.5rem;
+}
+
+.homeButton {
+  background-color: $DDYellow;
+  color: $DDWhite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+  width: 16rem;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  font-weight: 300;
+}

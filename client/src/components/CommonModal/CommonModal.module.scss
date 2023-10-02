@@ -1,0 +1,64 @@
+@import "../../styles/main.scss";
+
+.backdrop {
+  position: fixed;
+  background-color: rgba($color: $DDBlack, $alpha: 0.8);
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: center;
+}
+
+.layout {
+  position: fixed;
+  width: 24rem;
+  height: 12rem;
+  border-radius: 0.4rem;
+  background-color: white;
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: "TheJamsil";
+  font-weight: 400;
+  box-shadow: 2px, 4px 10px rgba($color: $DDBlack, $alpha: 0.1);
+}
+
+.bar {
+  width: 100%;
+  height: 2.4rem;
+  background-color: $DDGreen;
+  color: $DDWhite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contents {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons {
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & > button {
+    background-color: initial;
+    border: solid 2px $DDLightGray;
+    border-radius: 0.4rem;
+    width: 8rem;
+    height: 2rem;
+    margin: 1rem;
+    font-family: "TheJamsil";
+    font-weight: 400;
+    cursor: pointer;
+  }
+  & > button:hover {
+    background-color: rgba($color: $DDBlack, $alpha: 0.04);
+  }
+}
