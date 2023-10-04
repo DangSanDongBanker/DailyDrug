@@ -1,0 +1,96 @@
+@import "../../styles/main.scss";
+
+.backdrop {
+  @include commonBackdrop;
+}
+
+.layout {
+  background-color: white;
+  width: 36rem;
+  height: 40rem;
+  padding: 2rem 3rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "TheJamsil";
+}
+
+.title {
+  font-size: 2rem;
+  letter-spacing: 4px;
+}
+
+.inputData {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 20rem;
+
+  & > div {
+    margin-bottom: 16px;
+  }
+  span {
+    display: inline-block;
+    width: 5rem;
+    text-align: center;
+    font-size: 1rem;
+  }
+  input,
+  select,
+  option {
+    display: inline;
+    width: 10rem;
+    height: 2.8rem;
+    padding: 10px;
+    border: solid 1px $DDLightGray;
+    font-size: 1rem;
+  }
+
+  .name,
+  .email {
+    display: flex;
+    align-items: center;
+    input[type="text"] {
+      flex-grow: 1;
+    }
+  }
+
+  .optionalInfo {
+    & > div {
+      margin-bottom: 16px;
+    }
+    display: flex;
+    flex-wrap: wrap;
+    input,
+    select {
+      text-align: center;
+    }
+  }
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  button {
+    height: 3rem;
+    margin: 0.3rem;
+    border: none;
+    border-radius: 0.4rem;
+    background-color: $DDLightGray;
+    color: $DDWhite;
+    font-family: "TheJamsil";
+    letter-spacing: 1.5px;
+    font-size: 1rem;
+    font-weight: 300;
+    cursor: pointer;
+  }
+  button:hover {
+    opacity: 0.9;
+  }
+  .submit {
+    background-color: $DDGreen;
+  }
+}
