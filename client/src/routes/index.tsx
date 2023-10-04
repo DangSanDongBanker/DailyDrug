@@ -1,6 +1,7 @@
 import React, { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import Spinner from "../components/Spinner/Spinner";
+import SignIn from "../components/SignIn/SignIn";
 
 const MainPage = lazy(() => import("pages/MainPage")); // lazy=동적 import
 const ErrorPage = lazy(() => import("pages/ErrorPage"));
@@ -24,6 +25,10 @@ const routes = createBrowserRouter([
   {
     path: `${baseRoute}/spinner`,
     element: <Spinner />,
+  },
+  {
+    path: `${baseRoute}/login`,
+    element: <SignIn />,
   },
 ]);
 
