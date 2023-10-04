@@ -1,0 +1,27 @@
+@mixin commonBackdrop {
+  position: fixed;
+  background-color: rgba($color: $DDBlack, $alpha: 0.8);
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: center;
+  padding-top: 6rem;
+}
+
+@mixin logoStyle {
+  font-family: OKDDUNG;
+  letter-spacing: 1px;
+  font-size: 30px;
+  margin-right: 70px;
+  color: $DDYellow;
+  .point {
+    display: inline;
+    color: $DDGreen;
+    font-family: inherit;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
