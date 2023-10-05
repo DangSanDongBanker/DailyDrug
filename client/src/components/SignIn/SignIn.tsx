@@ -1,4 +1,5 @@
 import styles from "./SignIn.module.scss";
+import kakaoImg from "assets/images/kakao_login_large_wide.png";
 
 const SignIn = () => {
   return (
@@ -15,7 +16,9 @@ const SignIn = () => {
                 rug
               </span>
             </div>
-            <button className={styles.login}>카카오로 로그인하기</button>
+            <button className={styles.login}>
+              <img src={kakaoImg} alt="카카오로 로그인 버튼" />
+            </button>
           </div>
         </div>
       </div>
