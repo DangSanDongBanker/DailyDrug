@@ -1,5 +1,7 @@
 import React from "react";
 import styles from "./Error.module.scss";
+import { Link } from "react-router-dom";
+
 const Error = () => {
   const errorCode = 404;
   const errorMessage = "페이지를 찾을 수 없습니다.";
@@ -11,9 +13,9 @@ const Error = () => {
       </div>
       <div className={styles.infoLayout}>
         <span className={styles.errorMessage}>{errorMessage}</span>
-        <div className={styles.homeButton}>
-          <a href="/">홈화면으로 돌아가기</a>
-        </div>
+        <Link to="/" className={styles.homeButton}>
+          <span>홈화면으로 돌아가기</span>
+        </Link>
       </div>
     </div>
   );

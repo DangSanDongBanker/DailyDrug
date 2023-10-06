@@ -1,11 +1,10 @@
 import React, { Suspense } from "react";
 import { RecoilRoot } from "recoil";
-import { RouterProvider } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+
 import Header from "components/Header/Header";
 import Footer from "components/Footer/Footer";
-import routes from "./routes";
 import styles from "./App.module.scss";
-import Spinner from "components/Spinner/Spinner";
 
 function App() {
   return (
@@ -13,11 +12,7 @@ function App() {
       <React.StrictMode>
         <RecoilRoot>
           <Header />
-          <div className={styles.main}>
-            <Suspense fallback={<Spinner />}>
-              <RouterProvider router={routes} />
-            </Suspense>
-          </div>
+          <Outlet />
           <Footer />
         </RecoilRoot>
       </React.StrictMode>
