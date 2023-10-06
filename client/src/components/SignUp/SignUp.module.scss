@@ -74,7 +74,11 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  button {
+  .submit,
+  .prev {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 3rem;
     margin: 0.3rem;
     border: none;
@@ -86,9 +90,9 @@
     font-size: 1rem;
     font-weight: 300;
     cursor: pointer;
-  }
-  button:hover {
-    opacity: 0.9;
+    &:hover {
+      opacity: 0.9;
+    }
   }
   .submit {
     background-color: $DDGreen;

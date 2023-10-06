@@ -1,4 +1,5 @@
 import styles from "./SignUp.module.scss";
+import { useNavigate } from "react-router-dom";
 
 interface Iprops {
   email: string;
@@ -15,6 +16,15 @@ interface IuserInfo {
 }
 
 const SignUp = () => {
+  const navigate = useNavigate();
+
+  const clickHandlePrev = () => {
+    navigate(-1);
+  };
+  const clickHandleSignUp = () => {
+    navigate("/");
+  };
+
   return (
     <div className={styles.backdrop}>
       <form className={styles.layout}>
@@ -54,8 +64,12 @@ const SignUp = () => {
         </div>
 
         <div className={styles.buttons}>
-          <button className={styles.submit}>가입하기</button>
-          <button className={styles.prev}>이전으로</button>
+          <div onClick={clickHandleSignUp} className={styles.submit}>
+            가입하기
+          </div>
+          <div onClick={clickHandlePrev} className={styles.prev}>
+            이전으로
+          </div>
         </div>
       </form>
     </div>
