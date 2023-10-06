@@ -1,4 +1,4 @@
-package repository;
+package com.dailyDrug.repository;
 
 import lombok.Data;
 
