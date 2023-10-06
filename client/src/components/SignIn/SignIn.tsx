@@ -6,7 +6,7 @@ const SignIn = () => {
   const navigate = useNavigate();
 
   const clickHandleLogin = () => {
-    navigate("/regist");
+    navigate("/signUp");
   };
   return (
     <>

@@ -21,11 +21,11 @@ const routes = createBrowserRouter([
       { index: true, path: "/", element: <MainPage /> },
       //// 테스트용 Router
       {
-        path: `${baseRoute}/login`,
+        path: `${baseRoute}/signIn`,
         element: <SignIn />,
       },
       {
-        path: `${baseRoute}/regist`,
+        path: `${baseRoute}/signUp`,
         element: <SignUp />,
       },
       {

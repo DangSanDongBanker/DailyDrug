@@ -16,7 +16,7 @@ const Header = () => {
     setLogin(false);
   };
   const clickHandleLogin = () => {
-    navigate("/login");
+    navigate("/signIn");
   };
 
   return (
