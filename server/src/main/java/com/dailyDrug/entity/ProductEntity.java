@@ -35,5 +35,4 @@ public class ProductEntity {
         this.detailNutrient = detailNutrient;
     }
 
-
 }
