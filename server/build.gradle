@@ -27,11 +27,16 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
     implementation 'org.json:org.json:chargebee-1.0'
 	implementation 'org.json:json:20230618'
-	runtimeOnly 'com.h2database:h2'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    runtimeOnly 'com.h2database:h2'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
+	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '2.4.1'
 }
+
+
 
 tasks.named('test') {
 	useJUnitPlatform()

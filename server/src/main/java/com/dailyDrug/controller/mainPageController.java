@@ -18,7 +18,7 @@ public class mainPageController {
     @GetMapping("/list")
     public String defaultMain(Model model){
         model.addAttribute("data", "adsfzxcv");
-        return "hell";
+        return "hello";
     }
 
 

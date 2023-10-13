@@ -1,14 +1,18 @@
 package com.dailyDrug.Service;
 import com.dailyDrug.dto.ProductDto;
+import com.dailyDrug.entity.ProductEntity;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Transactional
 public interface ProductService {
 
-    List<ProductDto> getProductsList(int pageNo, String productCategory, String productOrder);
-    List<ProductDto> getProductsCode(String productCode);
-    List<ProductDto> getDailyRecommand(String dailyServiceCode);
+    ProductDto getProductInfo(Integer productId);
+    List<ProductEntity> getProductsList(int pageNo, String productCategory, String productOrder);
+
+
+
+
 
 
 }

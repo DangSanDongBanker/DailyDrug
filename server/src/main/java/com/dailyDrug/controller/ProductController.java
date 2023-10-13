@@ -2,82 +2,41 @@ package com.dailyDrug.controller;
 
 import com.dailyDrug.Service.ProductService;
 import com.dailyDrug.dto.ProductDto;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.annotation.Resource;
-import jakarta.servlet.http.HttpServletRequest;
 import org.json.JSONException;
-import org.springframework.web.bind.annotation.*;
 import org.json.JSONObject;
-
-import java.util.List;
-
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/product")
+@RequestMapping("/products")
 
 public class ProductController {
 
     @Resource
     private ProductService productService;
 
-    /**
-     * @method 			페이지, 조건에 따른 제품 목록을 조회하기 위한 메소드
-     * @param pageNo 	선택 페이저 ===> 무한 스크롤 조사 필요(큰 차이 없을 듯?)
-     * @return 		조건을 만족하는 상품 리스트
-     * @throws Exception
-     */
-    @GetMapping("/productList")
-    public String getAllProducts(
-            HttpServletRequest request,
-            @RequestParam(name = "pageNo", defaultValue = "1") int pageNo) {
+    @GetMapping("/{product-id}")
+    public String getProductInformation(@PathVariable("product-id") Integer productId){
 
-        // 검색 중 카테고리 조건
-        String productCategory = request.getParameter("productCategory");
-        // 정렬 조건
-        String productOrder = request.getParameter("productOrder");
+        //java객체를 json직렬화 하기 위한 Jackson ObjectMapper 생성
+        ObjectMapper objectMapper = new ObjectMapper();
 
-        //테스트 중 ///예시
-        ProductDto product = new ProductDto();
-        List<ProductDto> productList = productService.getProductsList(pageNo, productCategory, productOrder);
-
-        JSONObject jsonObject = new JSONObject();
+        ProductDto productInfo = productService.getProductInfo(productId);
 
         try {
-            jsonObject.put("productList", productList);
-        } catch (JSONException e) {
+            //DTO 객체를 JSON 문자열로 직렬화
+            String result = objectMapper.writeValueAsString(productInfo);
+            return result;
+        } catch (JsonProcessingException e) {
             e.printStackTrace();
+            return "JSON Serialization error";
         }
-
-        return jsonObject.toString();
     }
-
-    /**
-     * @method 			선택 상품의 상세 정보 조회 (영양 성분, 상품명, 가격 등)
-     * @param productCode 	선택한 상품의 상품코드
-     * @return 		선택 상품의 상세 정보
-     * @throws Exception
-     */
-    @GetMapping("/productCode")
-    public String getProduct(@RequestParam(name = "productCode") String productCode){
-
-        List<ProductDto> productDetailInformation = productService.getProductsCode(productCode);
-        JSONObject jsonObject = new JSONObject();
-
-        try {
-            jsonObject.put("productDetailInformation", productDetailInformation);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        return jsonObject.toString();
-    }
-
-    /**
-     * @method 			일일 영양 권장량 조회
-     * @param dailyServiceCode 	선택 조회 권장량
-     * @return
-     * @throws Exception
-     */
-
-
 }
+
+
+//참조 블로그, 글, 코드
+// api 설계 원칙 참조 블로그: https://velog.io/@couchcoding/개발-초보를-위한-RESTful-API-설계-가이드
 
