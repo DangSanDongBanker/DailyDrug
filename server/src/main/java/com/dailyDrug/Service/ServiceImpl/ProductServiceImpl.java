@@ -8,6 +8,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.toList;
 
 @Service
 @RequiredArgsConstructor
@@ -24,13 +27,14 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<ProductEntity> getProductsList(int pageNo, String productCategory, String productOrder) {
+    public List<ProductDto> getProductList(String productCategory, String productOrder, int pageNo) {
 
-        List<ProductEntity> productEntityList = productRepository.findAllByProductName(productOrder);
-        // Entity타입의 List를 DTO타입의 List로 변환 해야 함
+        // Entity타입의 List를 DTO타입의 List로 변환 함 //최신순 정렬
+        List<ProductEntity> productEntityList = productRepository.findAllByProductCategoryOrderByRegistrationDate(productCategory);
 
-        return productEntityList;
-
+        return productEntityList.stream()
+                .map(ProductDto::new)
+                .collect(Collectors.toList());
     };
 
 

@@ -8,7 +8,7 @@ import java.util.List;
 public interface ProductService {
 
     ProductDto getProductInfo(Integer productId);
-    List<ProductEntity> getProductsList(int pageNo, String productCategory, String productOrder);
+    List<ProductDto> getProductList(String productCategory, String productOrder,  int pageNo);
 
 
 
