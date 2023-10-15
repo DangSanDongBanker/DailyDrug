@@ -26,6 +26,9 @@ public class ProductEntity {
     @Column(name = "detail_nutrient")
     private String detailNutrient; //상세 영양성분
 
+    @Column(name = "registration_date")
+    private String registrationDate; //상세 영양성분
+
     @Builder //Lombok 프로젝트의 기능 중 하나로, 빌더 패턴을 자동으로 생성(get, set)
     public ProductEntity(Integer productId,String productName, String productCategory, Integer interestDrugCount, String detailNutrient) {
         this.productId = productId;
