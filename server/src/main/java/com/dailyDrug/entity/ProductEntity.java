@@ -30,12 +30,13 @@ public class ProductEntity {
     private String registrationDate; //상세 영양성분
 
     @Builder //Lombok 프로젝트의 기능 중 하나로, 빌더 패턴을 자동으로 생성(get, set)
-    public ProductEntity(Integer productId,String productName, String productCategory, Integer interestDrugCount, String detailNutrient) {
+    public ProductEntity(Integer productId,String productName, String productCategory, Integer interestDrugCount, String detailNutrient, String registrationDate) {
         this.productId = productId;
         this.productName = productName;
         this.productCategory = productCategory;
         this.interestDrugCount = interestDrugCount;
         this.detailNutrient = detailNutrient;
+        this.registrationDate = registrationDate;
     }
 
 }

@@ -5,7 +5,13 @@ import com.dailyDrug.dto.ProductDto;
 import com.dailyDrug.entity.ProductEntity;
 import com.dailyDrug.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
+import org.springframework.data.domain.Pageable;
+import com.dailyDrug.specification.ProductSpecification;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -27,12 +33,19 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<ProductDto> getProductList(String productCategory, String productOrder, int pageNo) {
+    public List<ProductDto> getProductList(String productCategory, String productOrder, int pageNo, int pageSize) {
 
-        // Entity타입의 List를 DTO타입의 List로 변환 함 //최신순 정렬
-        List<ProductEntity> productEntityList = productRepository.findAllByProductCategoryOrderByRegistrationDate(productCategory);
+        //정렬 조건
+        Sort sort = Sort.by(Sort.Direction.DESC, productOrder);
+        Pageable pageable = PageRequest.of(pageNo, pageSize, sort);
 
-        return productEntityList.stream()
+        //검색 조건
+        Specification<ProductEntity> spec = ProductSpecification.equalProductCategory(productCategory);
+
+        Page<ProductEntity> posts= productRepository.findAll(spec, pageable);
+        List<ProductEntity> listOfPosts= posts.getContent();
+
+        return listOfPosts.stream()
                 .map(ProductDto::new)
                 .collect(Collectors.toList());
     };

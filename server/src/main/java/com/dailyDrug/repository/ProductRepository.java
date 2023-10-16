@@ -1,16 +1,22 @@
 package com.dailyDrug.repository;
 
 import com.dailyDrug.entity.ProductEntity;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
 import java.util.List;
 import java.util.Optional;
 
-public interface ProductRepository extends JpaRepository<ProductEntity, String> {
+public interface ProductRepository extends JpaRepository<ProductEntity, String>, JpaSpecificationExecutor<ProductEntity> {
   Optional<ProductEntity> findByProductId(Integer productId);
 
-  List<ProductEntity> findAllByProductCategoryOrderByRegistrationDate(String productCategory);
+  Page<ProductEntity> findAll(Specification<ProductEntity> spec, Pageable pageable);
+
+
+  //List<ProductEntity> findAllByProductCategoryOrderByRegistrationDate(String productCategory, int pageNo, int pageSize);
 
 
 }

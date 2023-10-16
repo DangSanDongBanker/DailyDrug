@@ -23,7 +23,6 @@ public class ProductDto {
         this.interestDrugCount = entity.getInterestDrugCount();
         this.detailNutrient = entity.getDetailNutrient();
     }
-
 }
 
 

@@ -40,12 +40,14 @@ public class ProductController {
 
     @GetMapping
     public String getProductList(@RequestParam("product-category") String productCategory,
-                                  @RequestParam("order-by") String orderBy, @RequestParam("page-no") int pageNo){
+                                  @RequestParam("product-order") String productOrder,
+                                  @RequestParam("page-no") int pageNo,
+                                  @RequestParam("page-size") int pageSize){
 
         //java객체를 json직렬화 하기 위한 Jackson ObjectMapper 생성
         ObjectMapper objectMapper = new ObjectMapper();
 
-        List<ProductDto> productList = productService.getProductList(productCategory, orderBy, pageNo);
+        List<ProductDto> productList = productService.getProductList( productCategory,  productOrder,  pageNo,  pageSize);
 
 
         try {
@@ -58,8 +60,6 @@ public class ProductController {
         }
     }
 }
-
-
 //참조 블로그, 글, 코드
 // api 설계 원칙 참조 블로그: https://velog.io/@couchcoding/개발-초보를-위한-RESTful-API-설계-가이드
 

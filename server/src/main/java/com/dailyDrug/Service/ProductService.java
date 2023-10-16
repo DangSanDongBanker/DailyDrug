@@ -8,11 +8,5 @@ import java.util.List;
 public interface ProductService {
 
     ProductDto getProductInfo(Integer productId);
-    List<ProductDto> getProductList(String productCategory, String productOrder,  int pageNo);
-
-
-
-
-
-
+    List<ProductDto> getProductList(String productCategory, String productOrder, int pageNo, int pageSize);
 }
