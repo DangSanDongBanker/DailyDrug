@@ -2,7 +2,7 @@ import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import App from "App";
 
-const MainPage = lazy(() => import("pages/MainPage")); // lazy=동적 import
+const MainPage = lazy(() => import("pages/MainPage/MainPage")); // lazy=동적 import
 const ErrorPage = lazy(() => import("pages/ErrorPage"));
 const Spinner = lazy(() => import("../components/Spinner/Spinner"));
 const SignIn = lazy(() => import("../components/SignIn/SignIn"));
