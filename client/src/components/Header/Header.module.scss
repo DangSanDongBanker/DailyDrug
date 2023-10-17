@@ -1,14 +1,16 @@
 @import "../../styles/main.scss";
 .layout {
   position: static;
-  margin-bottom: 16px;
+  margin-bottom: 0.5rem;
 }
 
 .header {
   display: flex;
   align-items: center;
-  height: 60px;
-  margin: 0px 14px;
+  // height: 60px;
+  height: 4rem;
+  // margin: 0px 14px;
+  margin: 0 0.6rem;
 }
 
 .bottomLine {
@@ -21,8 +23,10 @@
 .logo {
   font-family: OKDDUNG;
   letter-spacing: 1px;
-  font-size: 30px;
-  margin-right: 70px;
+  // font-size: 30px;
+  font-size: 1.9rem;
+  // margin-right: 70px;
+  margin-right: 4.4rem;
   color: $DDYellow;
   .point {
     color: $DDGreen;
@@ -35,12 +39,15 @@
 
 .nav {
   position: relative;
-  top: 14px;
+  // top: 14px;
+  top: 0.9rem;
   display: flex;
   margin-right: auto;
   font-family: TheJamsil;
-  height: 40px;
-  font-size: 24px;
+  // height: 40px;
+  height: 2.6rem;
+  // font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 300;
   .category {
     padding: 0px 20px;

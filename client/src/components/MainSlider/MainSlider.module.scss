@@ -1,0 +1,67 @@
+@import "../../styles/main.scss";
+
+.layout {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  overflow: visible;
+}
+.slider {
+  position: relative;
+  width: inherit;
+  display: flex;
+  align-items: center;
+  .banner_0,
+  .banner_1,
+  .banner_2 {
+    height: 30vh;
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top center;
+  }
+  .banner_0 {
+    background-image: url("../../assets//images/banner_bitamin.png");
+  }
+  .banner_1 {
+    background-image: url("../../assets//images/banner_tirtir.png");
+  }
+  .banner_2 {
+    background-image: url("../../assets//images/banner_othomol.png");
+  }
+}
+
+.buttons {
+  position: absolute;
+  display: inline;
+  margin: 0.5rem;
+  & > button {
+    cursor: pointer;
+    width: 0.9rem;
+    height: 0.9rem;
+    border-radius: 1rem;
+    border: none;
+    margin: 0.25rem;
+    background-color: $DDLightGray;
+    &:active {
+      background-color: #f9db6d;
+    }
+  }
+  .clickedBannerBtn {
+    background-color: #f9db6d;
+  }
+}
+
+@media (max-width: 1200px) {
+  .slider {
+    .banner_0,
+    .banner_1,
+    .banner_2 {
+      height: 30vh;
+      width: 100%;
+      background-size: cover;
+    }
+  }
+}
