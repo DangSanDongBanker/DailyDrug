@@ -27,7 +27,7 @@ public class ProductServiceImpl implements ProductService {
     public ProductDto getProductInfo(Integer productId) {
 
         ProductEntity product = productRepository.findByProductId(productId).orElseThrow(()
-                -> new IllegalArgumentException("해당 게시물이 존재하지 않습니다."));
+                -> new IllegalArgumentException("상품이 없습니다."));
 
         return new ProductDto(product);
     }
@@ -49,6 +49,20 @@ public class ProductServiceImpl implements ProductService {
                 .map(ProductDto::new)
                 .collect(Collectors.toList());
     };
+
+    @Override
+    public ProductEntity incrementProductInterest(Integer productId){
+
+        //update를 위해 entity 조회
+        ProductEntity product = productRepository.findByProductId(productId).orElseThrow(()
+                -> new IllegalArgumentException("해당상품이 존재하지 않습니다."));
+
+        // 좋아요 수를 증가시킴
+        product.setInterestDrugCount(product.getInterestDrugCount() + 1);
+
+        // 데이터베이스에 업데이트
+        return productRepository.save(product);
+    }
 
 
 

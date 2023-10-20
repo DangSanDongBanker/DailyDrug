@@ -2,12 +2,14 @@ package com.dailyDrug.controller;
 
 import com.dailyDrug.Service.ProductService;
 import com.dailyDrug.dto.ProductDto;
+import com.dailyDrug.entity.ProductEntity;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.ObjectNode;
 import jakarta.annotation.Resource;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -59,7 +61,19 @@ public class ProductController {
             return "JSON Serialization error";
         }
     }
+
+    @PatchMapping("/{product-id}/interest/increment")
+    public ResponseEntity<ProductEntity> incrementProductInterest(@PathVariable("product-id") Integer productId){
+
+        ProductEntity productInterest = productService.incrementProductInterest(productId);
+
+        return new ResponseEntity<>(productInterest, HttpStatus.OK);
+
+    }
 }
 //참조 블로그, 글, 코드
 // api 설계 원칙 참조 블로그: https://velog.io/@couchcoding/개발-초보를-위한-RESTful-API-설계-가이드
+
+//참조 프로젝트
+//https://github.com/osopromadze/Spring-Boot-Blog-REST-API/blob/main/src/main/java/com/sopromadze/blogapi/controller/TodoController.java
 
