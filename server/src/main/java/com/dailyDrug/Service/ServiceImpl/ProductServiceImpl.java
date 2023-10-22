@@ -26,35 +26,41 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public ProductDto getProductInfo(Integer productId) {
 
-        ProductEntity product = productRepository.findByProductId(productId).orElseThrow(()
+        ProductEntity product = productRepository.findById(productId).orElseThrow(()
                 -> new IllegalArgumentException("상품이 없습니다."));
 
         return new ProductDto(product);
     }
 
     @Override
-    public List<ProductDto> getProductList(String productCategory, String productOrder, int pageNo, int pageSize) {
+    public List<ProductEntity> getProductList(String productCategory, String productOrder, String sortOrder, int pageNo, int pageSize) {
 
         //정렬 조건
-        Sort sort = Sort.by(Sort.Direction.DESC, productOrder);
+        Sort sort = null;
+        if (sortOrder.equals("ASC")) {
+            sort = Sort.by(Sort.Direction.ASC, productOrder);
+        } else {
+            sort = Sort.by(Sort.Direction.DESC, productOrder);
+        }
         Pageable pageable = PageRequest.of(pageNo, pageSize, sort);
 
         //검색 조건
-        Specification<ProductEntity> spec = ProductSpecification.equalProductCategory(productCategory);
+        Specification<ProductEntity> spec = (root, query, criteriaBuilder) -> null;
+
+        if (productCategory != null)
+            spec = spec.and(ProductSpecification.equalProductCategory(productCategory));
 
         Page<ProductEntity> posts= productRepository.findAll(spec, pageable);
         List<ProductEntity> listOfPosts= posts.getContent();
 
-        return listOfPosts.stream()
-                .map(ProductDto::new)
-                .collect(Collectors.toList());
+        return listOfPosts;
     };
 
     @Override
     public ProductEntity incrementProductInterest(Integer productId){
 
         //update를 위해 entity 조회
-        ProductEntity product = productRepository.findByProductId(productId).orElseThrow(()
+        ProductEntity product = productRepository.findById(productId).orElseThrow(()
                 -> new IllegalArgumentException("해당상품이 존재하지 않습니다."));
 
         // 좋아요 수를 증가시킴

@@ -3,6 +3,7 @@ package com.dailyDrug.dto;
 import com.dailyDrug.entity.ProductEntity;
 import lombok.Data;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 @Data
@@ -14,14 +15,16 @@ public class ProductDto {
     private String productCategory; //상품분류
     private int interestDrugCount; //관심약 숫자
     private String detailNutrient; //상세 영양성분
+    private String registrationDate; //등록 일자
 
     //repository 를 통해 조회한 entity 를 dto 로 변환 용도
     public ProductDto(ProductEntity entity) {
-        this.productId = entity.getProductId();
+        this.productId = entity.getId();
         this.productName = entity.getProductName();
         this.productCategory = entity.getProductCategory();
         this.interestDrugCount = entity.getInterestDrugCount();
         this.detailNutrient = entity.getDetailNutrient();
+        this.registrationDate = entity.getRegistrationDate();
     }
 }
 
