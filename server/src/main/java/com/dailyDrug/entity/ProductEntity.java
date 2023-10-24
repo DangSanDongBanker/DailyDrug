@@ -3,6 +3,8 @@ package com.dailyDrug.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDateTime;
+
 @Getter
 @NoArgsConstructor
 @Entity
@@ -26,11 +28,11 @@ public class ProductEntity {
     @Column(name = "detail_nutrient")
     private String detailNutrient; //상세 영양성분
 
-    @Column(name = "registration_date")
-    private String registrationDate; //등록 일자
+    @Column(name = "registration_date", columnDefinition = "TIMESTAMP")
+    private LocalDateTime registrationDate; //등록 일자
 
     @Builder //Lombok 프로젝트의 기능 중 하나로, 빌더 패턴을 자동으로 생성(get, set)
-    public ProductEntity(Integer productId,String productName, String productCategory, Integer interestDrugCount, String detailNutrient, String registrationDate) {
+    public ProductEntity(Integer productId,String productName, String productCategory, Integer interestDrugCount, String detailNutrient, LocalDateTime registrationDate) {
         this.id = productId;
         this.productName = productName;
         this.productCategory = productCategory;

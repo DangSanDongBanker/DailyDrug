@@ -51,6 +51,15 @@ public class ProductController {
         return new ResponseEntity<>(productList, HttpStatus.OK);
     }
 
+    @GetMapping("/weekly-popular-products")
+    public ResponseEntity<List> getPopularProductList(@RequestParam(value = "page-no", defaultValue = "0", required = false) int pageNo,
+                                               @RequestParam(value = "page-size", defaultValue = "5", required = false) int pageSize){
+
+        List<ProductEntity> popularProductList = productService.getPopularProductList( pageNo,  pageSize);
+
+        return new ResponseEntity<>(popularProductList, HttpStatus.OK);
+    }
+
     /**
      * 선택 상품의 관심 횟수를 1증가시킬 수 있다.
      * @param productId
@@ -71,3 +80,5 @@ public class ProductController {
 //참조 프로젝트
 //https://github.com/osopromadze/Spring-Boot-Blog-REST-API/blob/main/src/main/java/com/sopromadze/blogapi/controller/TodoController.java
 
+//ResponseEntity
+//https://velog.io/@gkrry2723/Spring-Boot-Response-Entity-사용해서-결과값-return-해주기
