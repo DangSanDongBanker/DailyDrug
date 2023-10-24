@@ -13,6 +13,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.data.domain.Pageable;
 import com.dailyDrug.specification.ProductSpecification;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -57,6 +60,24 @@ public class ProductServiceImpl implements ProductService {
     };
 
     @Override
+    public List<ProductEntity> getPopularProductList(int pageNo, int pageSize) {
+
+        String orderSpec = "interestDrugCount";
+        //정렬 조건
+        Sort sort = Sort.by(Sort.Direction.DESC, orderSpec);
+        Pageable pageable = PageRequest.of(pageNo, pageSize, sort);
+
+        //검색 조건
+        Specification<ProductEntity> spec = (root, query, criteriaBuilder) -> null;
+        spec = spec.and(ProductSpecification.betweenCurrentWeek());
+
+        Page<ProductEntity> posts= productRepository.findAll(spec, pageable);
+        List<ProductEntity> listOfPosts= posts.getContent();
+
+        return listOfPosts;
+    };
+
+    @Override
     public ProductEntity incrementProductInterest(Integer productId){
 
         //update를 위해 entity 조회
@@ -69,7 +90,8 @@ public class ProductServiceImpl implements ProductService {
         // 데이터베이스에 업데이트
         return productRepository.save(product);
     }
-
-
-
 }
+
+
+//날짜 정렬 참조
+//https://isntyet.tistory.com/144

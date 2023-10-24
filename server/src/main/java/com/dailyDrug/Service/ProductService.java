@@ -9,5 +9,7 @@ public interface ProductService {
 
     ProductDto getProductInfo(Integer productId);
     List<ProductEntity> getProductList(String productCategory, String productOrder, String sortOrder, int pageNo, int pageSize);
+    List<ProductEntity>getPopularProductList(int pageNo, int pageSize);
     ProductEntity incrementProductInterest(Integer productId);
+
 }
