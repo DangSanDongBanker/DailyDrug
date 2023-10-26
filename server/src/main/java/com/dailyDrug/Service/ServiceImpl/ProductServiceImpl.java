@@ -13,15 +13,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.data.domain.Pageable;
 import com.dailyDrug.specification.ProductSpecification;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.util.List;
-import java.util.stream.Collectors;
-
-import static java.util.stream.Collectors.toList;
 
 @Service
+
+//Lombok 프로젝트의 어노테이션 중 하나로, 자동으로 생성자를 추가하는 데 사용
 @RequiredArgsConstructor
 public class ProductServiceImpl implements ProductService {
     final ProductRepository productRepository;

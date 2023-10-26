@@ -82,3 +82,6 @@ public class ProductController {
 
 //ResponseEntity
 //https://velog.io/@gkrry2723/Spring-Boot-Response-Entity-사용해서-결과값-return-해주기
+
+//content-type
+//https://2ham-s.tistory.com/292
