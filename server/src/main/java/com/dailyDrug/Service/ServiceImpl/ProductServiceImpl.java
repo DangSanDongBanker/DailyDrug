@@ -62,9 +62,8 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<ProductEntity> getPopularProductList(int pageNo, int pageSize) {
 
-        String orderSpec = "interestDrugCount";
         //정렬 조건
-        Sort sort = Sort.by(Sort.Direction.DESC, orderSpec);
+        Sort sort = Sort.by(Sort.Direction.DESC, "interestDrugCount");
         Pageable pageable = PageRequest.of(pageNo, pageSize, sort);
 
         //검색 조건
