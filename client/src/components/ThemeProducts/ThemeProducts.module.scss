@@ -1,0 +1,41 @@
+@import "../../styles/main.scss";
+
+.layout {
+  width: 70%;
+}
+
+.titleLayout {
+  padding: 0.6rem 0;
+  .title {
+    font-family: OKDDUNG;
+    font-size: 2rem;
+    color: $DDYellow;
+    margin-right: 0.8rem;
+  }
+
+  .titleHighlight {
+    color: $DDGreen;
+  }
+
+  .description {
+    font-family: TheJamsil;
+    font-weight: 400;
+    font-size: 1.1rem;
+  }
+}
+
+.bar {
+  width: 100%;
+  background-color: $DDLightGray;
+  opacity: 0.3;
+  height: 0.4rem;
+  border: none;
+}
+
+.productItems {
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
