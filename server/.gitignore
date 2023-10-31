@@ -175,7 +175,7 @@ gradle-app.setting
 
 !.gradle/wrapper/gradle-wrapper.jar
 
-.src/main/resources/application.properties
+application.properties
 
 ### Gradle Patch ###
 # Java heap dump
