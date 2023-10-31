@@ -175,6 +175,7 @@ gradle-app.setting
 
 !.gradle/wrapper/gradle-wrapper.jar
 
+!resources
 application.properties
 
 ### Gradle Patch ###
