@@ -176,7 +176,7 @@ gradle-app.setting
 !.gradle/wrapper/gradle-wrapper.jar
 application.properties
 
-!empty_dir/.gitkeep
+!resources/.gitkeep
 
 ### Gradle Patch ###
 # Java heap dump
