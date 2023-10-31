@@ -174,8 +174,6 @@ gradle-app.setting
 .classpath
 
 !.gradle/wrapper/gradle-wrapper.jar
-
-!resources
 application.properties
 
 ### Gradle Patch ###
