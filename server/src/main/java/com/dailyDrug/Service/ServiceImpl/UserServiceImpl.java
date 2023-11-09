@@ -15,7 +15,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserEntity getUserInfo(Integer code) {
 
-        UserEntity user = userRepository.findById(code).orElseThrow(()
+        UserEntity user = userRepository.findByCode(code).orElseThrow(()
                 -> new IllegalArgumentException("없는 회원 입니다."));
 
         return user;
