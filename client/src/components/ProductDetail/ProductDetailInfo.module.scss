@@ -1,47 +1,35 @@
-@import "../../styles/main.scss";
-
+@import "styles/main.scss";
 .layout {
   display: flex;
   flex-direction: column;
   font-family: "TheJamsil";
 }
 
-.productTitle {
-  .category {
-    font-size: 1rem;
-    color: $DDMediumGray;
-    font-weight: 300;
-    padding-bottom: 0.6rem;
-  }
-  .productName {
-    font-size: 1.3rem;
-    font-weight: 400;
-  }
-}
 .productInfo {
   display: flex;
   .productImgLayout {
-    background-color: red;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 14rem;
-    height: 16rem;
-    margin-right: 2rem;
+    max-width: 36rem;
+    margin-right: 4rem;
   }
   .productDescription {
     font-weight: 200;
     letter-spacing: 0.1rem;
-    line-height: 1.6rem;
-    font-size: 1rem;
+    font-size: 1.6rem;
+    max-width: 55rem;
     .descriptionTitle {
       color: $DDGreen;
-      font-size: 1.4rem;
+      font-size: 2.4rem;
       font-weight: 400;
-      margin-bottom: 0.4rem;
+      margin-bottom: 1rem;
     }
     .productDescriptionList {
       padding-left: 1rem;
+      li {
+        line-height: 3rem;
+      }
     }
   }
 }

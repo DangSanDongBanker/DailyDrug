@@ -1,8 +1,9 @@
 .layout {
+  left: 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100%;
   width: 100%;
-  // background-color: aquamarine;
+  gap: 2rem;
 }

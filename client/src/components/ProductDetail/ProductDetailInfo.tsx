@@ -1,4 +1,5 @@
 import styles from "./ProductDetailInfo.module.scss";
+import PriceComparison from "./PriceComparison";
 
 const stringToUl = (str: string) => {
   const lines = str.split("\n");
@@ -12,7 +13,6 @@ const stringToUl = (str: string) => {
 };
 
 const ProductDetailInfo = () => {
-  const category = "카테고리 > 영양제 > 유산균";
   const imgURL =
     "https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/cgn/cgn00965/r/68.jpg";
   const productName =
@@ -28,10 +28,6 @@ const ProductDetailInfo = () => {
   return (
     <>
       <div className={styles.layout}>
-        <div className={styles.productTitle}>
-          <div className={styles.category}>{category}</div>
-          <div className={styles.productName}>{productName}</div>
-        </div>
         <div className={styles.productInfo}>
           <div className={styles.productImgLayout}>
             <img src={imgURL} alt={productName} />

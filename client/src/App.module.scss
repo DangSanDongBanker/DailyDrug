@@ -3,11 +3,11 @@
 .App {
   height: 100%;
   display: flex;
+  // min-width: 123rem;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
-.main {
-  height: 100%;
-  width: 100%;
+.contents {
+  padding: 0rem 5rem;
 }

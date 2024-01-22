@@ -1,6 +1,8 @@
 import styles from "./ThemeProducts.module.scss";
 import ProductItem from "components/ProductItem/ProductItem";
 import { propsProductItem } from "../ProductItem/ProductItem";
+import { useEffect } from "react";
+import productsApi from "../../services/apis/products";
 
 // TODO:https://github.com/typicode/json-server#simple-example
 const products = [
@@ -41,6 +43,11 @@ interface propsThemProducts {
   type?: "highlight" | null;
   description: string;
 }
+
+const getData = async () => {
+  const responseData = await productsApi.getWeeklyPopular(5);
+  return responseData;
+};
 
 const ThemeProducts = ({
   title,

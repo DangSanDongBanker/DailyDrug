@@ -12,7 +12,9 @@ function App() {
       <React.StrictMode>
         <RecoilRoot>
           <Header />
-          <Outlet />
+          <div className={styles.contents}>
+            <Outlet />
+          </div>
           <Footer />
         </RecoilRoot>
       </React.StrictMode>

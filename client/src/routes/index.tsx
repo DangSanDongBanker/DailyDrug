@@ -7,6 +7,9 @@ const ErrorPage = lazy(() => import("pages/ErrorPage"));
 const Spinner = lazy(() => import("../components/Spinner/Spinner"));
 const SignIn = lazy(() => import("../components/SignIn/SignIn"));
 const SignUp = lazy(() => import("../components/SignUp/SignUp"));
+const ProductDetailPage = lazy(
+  () => import("pages/ProductDetailPage/ProductDetailPage")
+);
 
 const baseRoute = process.env.REACT_APP_BASE_ROUTE
   ? process.env.REACT_APP_BASE_ROUTE
@@ -31,6 +34,10 @@ const routes = createBrowserRouter([
       {
         path: `${baseRoute}/spinner`,
         element: <Spinner />,
+      },
+      {
+        path: `${baseRoute}/ProductDetail`,
+        element: <ProductDetailPage />,
       },
     ],
   },
