@@ -1,0 +1,50 @@
+@import "styles/main.scss";
+.layout {
+  position: relative;
+  display: flex;
+  border: 2px solid $DDYellow;
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.profileImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: $DDYellow;
+  width: 4rem;
+  height: 4rem;
+  margin-right: 2rem;
+  img {
+    height: 2.6rem;
+  }
+}
+
+.contents {
+  flex: 1;
+}
+
+.id {
+  color: $DDGreen;
+  font-weight: 500;
+  height: 4rem;
+}
+
+.date {
+  position: absolute;
+  top: 0rem;
+  right: 0rem;
+  color: $DDLightGray;
+  margin: 2rem;
+}
+
+.answer {
+  color: $DDGreen;
+  font-weight: 300;
+  margin-top: 1rem;
+  img {
+    transform: rotate(180deg);
+    margin-right: 0.8rem;
+  }
+}
