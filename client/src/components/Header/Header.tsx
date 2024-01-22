@@ -59,7 +59,6 @@ const Header = () => {
           )}
         </div>
       </div>
-      <div className={styles.bottomLine}></div>
     </div>
   );
 };

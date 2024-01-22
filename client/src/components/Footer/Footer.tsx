@@ -2,7 +2,7 @@ import styles from "./Footer.module.scss";
 
 const Footer = () => {
   return (
-    <>
+    <div className={styles.layout}>
       <div className={styles.footer}>
         <div className={styles.company}>
           © 2023 Project DangSanDongBanker Corp.
@@ -16,7 +16,7 @@ const Footer = () => {
 
         <div className={styles.policy}>이용약관 | 개인정보 처리방침</div>
       </div>
-    </>
+    </div>
   );
 };
 

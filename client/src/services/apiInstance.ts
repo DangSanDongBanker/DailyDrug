@@ -1,10 +1,13 @@
 import axios from "axios";
 
-const apiClient = axios.create({
-  baseURL: `${process.env.REACT_APP_API_ADDRESS}/api`,
+const apiInstance = axios.create({
+  baseURL: `${process.env.REACT_APP_API_ADDRESS}/`,
   timeout: 1000,
   withCredentials: true,
+  headers: { "Content-Type": "application/json" },
 });
+
+export default apiInstance;
 
 // export async function fetchUserInfo() {
 //   try {

@@ -1,0 +1,72 @@
+@import "styles/main.scss";
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  gap: 6rem;
+}
+
+.productArea {
+  display: flex;
+  flex: 1;
+}
+
+.productTitle {
+  .category {
+    font-size: 1.4rem;
+    color: $DDMediumGray;
+    font-weight: 200;
+    padding-bottom: 1rem;
+  }
+  .productName {
+    font-size: 2.6rem;
+    font-weight: 400;
+  }
+}
+
+.productDetailArea {
+  margin-right: auto;
+}
+.buttons {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+  margin-top: 1.4rem;
+  button {
+    width: 100%;
+    height: 3.6rem;
+    border: none;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: $DDWhite;
+    border-radius: 0.4rem;
+    background-color: $DDMediumGray;
+  }
+
+  :first-child {
+    background-color: $DDYellow;
+  }
+}
+
+.qnaArea {
+  .qnaList {
+    padding: 0 4rem;
+  }
+
+  .qnaTitle {
+    display: flex;
+    align-items: center;
+    color: $DDBlack;
+    height: 3.6rem;
+    font-size: 2.4rem;
+    font-weight: 400;
+    border-bottom: 2px solid rgba($DDLightGray, 0.3);
+    margin-bottom: 2.8rem;
+
+    img {
+      display: flex;
+    }
+  }
+}

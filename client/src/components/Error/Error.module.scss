@@ -1,7 +1,6 @@
 @import "../../styles/main.scss";
 
 .layout {
-  // background-color: blueviolet;
   height: 100%;
   width: 100%;
   display: flex;
@@ -10,23 +9,22 @@
 }
 
 .errorCodeLayout {
-  // background-color: gold;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   font-family: "OKDDUNG";
-  font-size: 4rem;
-  margin-right: 4rem;
+  font-size: 7rem;
+  margin-right: 8rem;
 
   color: $DDBlack;
   .Code {
-    font-size: 6rem;
+    font-size: 10rem;
   }
 }
 
 .infoLayout {
-  // background-color: green;
+  max-width: 34rem;
   font-family: "TheJamsil";
   display: flex;
   flex-direction: column;
@@ -35,18 +33,18 @@
 .errorMessage {
   height: 6rem;
   font-weight: 100;
-  font-size: 1.5rem;
+  font-size: 2.6rem;
 }
 
 .homeButton {
+  font-size: 2.2rem;
   background-color: $DDYellow;
   color: $DDWhite;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 3rem;
-  width: 16rem;
-  border-radius: 0.6rem;
+  height: 6rem;
+  border-radius: 1rem;
   cursor: pointer;
   font-weight: 300;
 }
