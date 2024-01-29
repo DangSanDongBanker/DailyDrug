@@ -1,0 +1,35 @@
+@import "styles/main.scss";
+.layout {
+  display: flex;
+  flex-direction: column;
+  font-family: "TheJamsil";
+}
+
+.productInfo {
+  display: flex;
+  .productImgLayout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 36rem;
+    margin-right: 4rem;
+  }
+  .productDescription {
+    font-weight: 200;
+    letter-spacing: 0.1rem;
+    font-size: 1.6rem;
+    max-width: 55rem;
+    .descriptionTitle {
+      color: $DDGreen;
+      font-size: 2.4rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+    }
+    .productDescriptionList {
+      padding-left: 1rem;
+      li {
+        line-height: 3rem;
+      }
+    }
+  }
+}

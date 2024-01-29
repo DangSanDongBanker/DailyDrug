@@ -1,0 +1,122 @@
+@import "../../styles/main.scss";
+.layout {
+  margin-bottom: 0.5rem;
+  box-shadow: 0 1px 6px
+    rgba($color: rgba($color: $DDMediumGray, $alpha: 0.3), $alpha: 0.3);
+  margin-bottom: 4rem;
+}
+
+.header {
+  top: 0;
+  left: 0;
+  position: sticky;
+  display: flex;
+  align-items: end;
+  height: 7rem;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  font-family: OKDDUNG;
+  letter-spacing: 1px;
+  font-size: 3.6rem;
+  color: $DDYellow;
+  margin-right: 2rem;
+  .point {
+    color: $DDGreen;
+    font-family: inherit;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.nav {
+  top: 0.9rem;
+  display: flex;
+  align-items: end;
+  margin-right: auto;
+  font-family: TheJamsil;
+  height: 2.4rem;
+  font-size: 2.4rem;
+  font-weight: 300;
+  .category {
+    padding: 0px 20px;
+    // TODO : 마우스 오버시 카테고리가 띄워짐
+    // & > img {
+    //   height: 20px;
+    // }
+
+    &:hover {
+      cursor: pointer;
+      // border-bottom: 4px solid $DDYellow;
+      // z-index: 1;
+      color: $DDYellow;
+    }
+  }
+}
+
+.userInfo {
+  .isLogout {
+    height: 3.8rem;
+    width: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 3px solid $DDGreen;
+    border-radius: 10px;
+
+    font-family: TheJamsil;
+    font-size: 1.6rem;
+    color: $DDGreen;
+    font-weight: 400;
+    background-color: transparent;
+
+    &:hover {
+      background-color: $DDGreen;
+      color: $DDWhite;
+      cursor: pointer;
+    }
+  }
+
+  .isLogin {
+    height: 40px;
+    top: 14px;
+    font-family: TheJamsil;
+    font-size: 17px;
+    color: $DDGreen;
+    font-weight: 500;
+    position: relative;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+  }
+}
+
+.dropdown {
+  position: absolute;
+  background-color: white;
+  right: 2px;
+  top: 4.4rem;
+  width: 9rem;
+  box-shadow: 0px 4px 10px rgba($color: $DDMediumGray, $alpha: 0.3);
+  // display: none;
+}
+
+.dropdownMenu {
+  border: solid 1px rgba($color: $DDLightGray, $alpha: 0.4);
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $DDMediumGray;
+  font-family: "TheJamsil";
+  font-weight: 200;
+  &:hover {
+    color: $DDGreen;
+    cursor: pointer;
+    font-weight: 300;
+    text-shadow: 0px 0px 4px rgba($color: #000000, $alpha: 0.08);
+  }
+}

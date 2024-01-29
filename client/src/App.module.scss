@@ -1,0 +1,13 @@
+@import "./styles/main.scss";
+
+.App {
+  height: 100%;
+  display: flex;
+  // min-width: 123rem;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.contents {
+  padding: 0rem 5rem;
+}
