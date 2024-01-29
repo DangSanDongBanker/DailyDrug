@@ -1,9 +1,6 @@
 package com.dailyDrug.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,6 +15,7 @@ public class UserEntity {
 
     @Id
     @Column(name = "code", unique = true)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer code;
 
     @Column(name = "interest_drug")
@@ -44,7 +42,7 @@ public class UserEntity {
     @Column(name = "manager_code")
     private Integer managerCode;
 
-    @Column(name = "email")
+    @Column(name = "email", unique = true)
     private String email;
 
     @Builder //Lombok 프로젝트의 기능 중 하나로, 빌더 패턴을 자동으로 생성(get, set)
@@ -61,5 +59,4 @@ public class UserEntity {
         this.managerCode = managerCode;
         this.email = email;
     }
-
 }
